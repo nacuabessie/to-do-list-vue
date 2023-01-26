@@ -38,21 +38,21 @@ onMounted(() => {
 <template>
 	<main class="app">
 
-    <div class="mt-[3rem] mb-[3rem]  ml-[20rem] h-[80rem] w-[40rem] bg-[#f3d5b5] text-black rounded-2xl">
+    <div class="mt-[3rem] mb-[3rem]  ml-[55rem] h-[80rem] w-[45rem] bg-[#f3d5b5] text-black rounded-2xl">
       <h2 class="font-bold text-lg text-center p-4">
 				To Do List
 			</h2>
 
       <section class="flex justify-center">
-        <h2 class="font-bold pl-[4rem] pt-[3rem] pb-[3rem] w-[100%] text-2xl h-[20rem] bg-[#c1121f] text-white rounded-b-4xl">
+        <h2 class="font-bold pl-[4rem] pt-[3rem] pb-[3rem] w-[100%] text-2xl h-[20rem] bg-[#c1121f] text-white rounded-b-3xl">
           Complete this Task<br/>for a better life
         </h2>
 
         <div class="absolute">
-            <div class="rounded-t-2xl mt-[10.3rem] w-[38rem]">
+            <div class="rounded-2xl mt-[10.3rem] w-[38rem] shadow-2xl">
               <section>
                 <h3 class="bg-[#ee964b] rounded-t-2xl text-center p-[2rem] font-bold text-xl">CREATE A TODO</h3>
-            <div class="bg-white">
+            <div class="bg-white rounded-b-2xl">
               <form id="new-todo-form" @submit.prevent="addTodo">
                 <div class="pt-[3rem] pl-[3rem] ">
                   <h4 class="font-bold pb-2">What's on your todo list?</h4>
@@ -100,24 +100,16 @@ onMounted(() => {
 
             </div>
         </div>
-			<!-- <h2 class="font-bold pl-[4rem] pt-[3rem] pb-[3rem] text-2xl h-[16rem] bg-[#c1121f] text-white rounded">
-				Complete this Task<br/>for a better life
-			</h2> -->
 		</section>
 
-		<section class="rounded-2xl bg-white m-5 shadow-lg">
-      
-      <!-- <div class="bg-[#ee964b] rounded-t-2xl text-center">
-        <h3 class="p-[2rem] font-bold text-xl">CREATE A TODO</h3>
-      </div> -->
-		</section>
 
-		<section class="rounded-2xl mt-[22rem] h-[35rem] bg-[#779be7]">
-      <h3 class="pt-[8rem]">My Task</h3>
-			<div class="m-5 p-[1rem] w-[37rem] bg-white rounded-3xl " id="todo-list">
-				<div v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
+    <section class="todo-list mt-[20rem] h-[37rem] bg-white rounded-3xl">
+			<h3 class="pt-[9rem] pl-[2rem] text-2xl font-bold">MY TASK</h3>
+			<div class="list" id="todo-list">
+
+				<div class="ml-[3rem] mr-[3rem]" v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">
 					<label>
-						<input class="line-through" type="checkbox" v-model="todo.done" />
+						<input type="checkbox" v-model="todo.done" />
 						<span :class="`bubble ${
 							todo.category == 'business' 
 								? 'business' 
@@ -130,11 +122,11 @@ onMounted(() => {
 					</div>
 
 					<div class="actions">
-						<button class="d" @click="removeTodo(todo)">Delete</button>
+						<button class="delete bg-red-600" @click="removeTodo(todo)">Delete</button>
 					</div>
 				</div>
-      </div>
 
+			</div>
 		</section>
 
     </div>
