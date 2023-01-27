@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
 	<main class="app">
 
-    <div class="mt-[3rem] mb-[3rem]  ml-[55rem] h-[80rem] w-[45rem] bg-[#f3d5b5] text-black rounded-2xl">
+    <div class="mt-[2rem] mb-[3rem]  ml-[30rem] h-[75rem] w-[34rem] bg-[#f3d5b5] text-black rounded-2xl">
       <h2 class="font-bold text-lg text-center p-4">
 				To Do List
 			</h2>
@@ -49,15 +49,15 @@ onMounted(() => {
         </h2>
 
         <div class="absolute">
-            <div class="rounded-2xl mt-[10.3rem] w-[38rem] shadow-2xl">
+            <div class="rounded-2xl mt-[10.3rem] w-[30rem] shadow-2xl">
               <section>
-                <h3 class="bg-[#ee964b] rounded-t-2xl text-center p-[2rem] font-bold text-xl">CREATE A TODO</h3>
-            <div class="bg-white rounded-b-2xl">
+                <h3 class="bg-[#ee964b] rounded-t-2xl text-center p-4 font-extrabold text-base">CREATE A TASK</h3>
+            <div class="bg-[#B7B78A] rounded-b-2xl">
               <form id="new-todo-form" @submit.prevent="addTodo">
                 <div class="pt-[3rem] pl-[3rem] ">
                   <h4 class="font-bold pb-2">What's on your todo list?</h4>
 				          <input 
-                  class="rounded-xl p-5 w-[32rem] bg-[#ffc971]"
+                  class="rounded-xl p-3 w-[25rem] bg-[#f3d5b5]"
 					        type="text" 
 					        name="content" 
 					        id="content" 
@@ -65,8 +65,8 @@ onMounted(() => {
 					        v-model="input_content" />
                 </div>
 				
-				        <h4 class="pt-8 text-center font-bold text-xl">Pick a category</h4>
-			        <div class="grid grid-rows-1 grid-cols-2 h-[10rem] text-center p-6">
+				        <h4 class="pt-8 text-center font-bold text-base">Pick a category</h4>
+			        <div class="grid grid-rows-1 grid-cols-2 h-[10rem] text-center p-8">
 					    <label class="bg-[#ffb700] ml-[3rem] mr-5 p-5 rounded-xl">
 						    <input class="w-4 h-4  "
 							  type="radio" 
@@ -90,7 +90,7 @@ onMounted(() => {
 					    </label>
 				    </div>
 
-          <button class="ml-[7rem] mb-[3rem] mt-5 p-5 bg-[#772f1a] text-white font-bold rounded-xl w-[25rem]" type="submit">Add task</button>
+          <button class="ml-[7rem] mb-[3rem] mt-3 p-3 bg-[#772f1a] text-white font-bold rounded-xl w-[15rem]" type="submit">Add task</button>
 			</form>
 
             </div>
@@ -103,8 +103,8 @@ onMounted(() => {
 		</section>
 
 
-    <section class="todo-list mt-[20rem] h-[37rem] bg-white rounded-3xl">
-			<h3 class="pt-[9rem] pl-[2rem] text-2xl font-bold">MY TASK</h3>
+    <section class="todo-list mt-[15rem] h-[37rem] bg-white rounded-3xl">
+			<h3 class="pt-[9rem] pl-[2rem] text-xl font-bold">MY TASK</h3>
 			<div class="list" id="todo-list">
 
 				<div class="ml-[3rem] mr-[3rem]" v-for="todo in todos_asc" :class="`todo-item ${todo.done && 'done'}`">

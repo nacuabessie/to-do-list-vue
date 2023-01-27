@@ -24,7 +24,7 @@
 .todo-list .todo-item {
 	display: flex;
 	align-items: center;
-	background-color: #cccccc;
+	background-color: #afadad;
 	padding: 1rem;
 	border-radius: 0.5rem;
 	box-shadow: var(--shadow);
@@ -43,7 +43,7 @@
 
 .todo-item .todo-content input {
 	color: var(--dark);
-  background-color: #cccccc;
+  background-color: #afadad;
 	font-size: 1.125rem;
 }
 
